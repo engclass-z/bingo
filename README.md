@@ -19,3 +19,9 @@ yarn dev
 ```sh
 yarn build
 ```
+
+### Static check on the template tag.
+
+```sh
+lint:markup
+```
