@@ -43,9 +43,7 @@
         v-if="outputtedNumList.includes(num)"
         color="red"
       >
-        {{
-          num
-        }}
+        {{ num }}
       </v-chip>
       <v-chip v-else>
         {{ num }}
