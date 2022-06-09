@@ -1,27 +1,29 @@
 {
   "name": "vite-project",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "serve": "vite preview",
+    "build": "vite build",
     "lint": "eslint --fix src/*.{ts,vue} && eslint --fix src/**/*.{ts,vue}",
-    "format": "prettier -w src/*.{ts,vue} && prettier -w src/**/*.{ts,vue}",
+    "dev": "vite",
     "fix": "yarn format && yarn lint",
+    "format": "prettier -w src/*.{ts,vue} && prettier -w src/**/*.{ts,vue}",
     "lint:markup": "vue-tsc --noEmit",
-    "preview": "vite preview",
-    "prepare": "husky install"
-  },
-  "lint-staged": {
-    "src/**/*.{ts,vue}": "eslint --fix",
-    "*.{ts,vue,scss,json,md}": "prettier --write"
+    "prepare": "husky install",
+    "preview": "vite preview"
   },
   "dependencies": {
+    "@mdi/font": "5.9.55",
+    "roboto-fontface": "*",
     "vue": "^3.2.25",
     "vue-router": "4",
-    "vuex": "^4.0.2"
+    "vuetify": "^3.0.0-beta.0",
+    "vuex": "^4.0.2",
+    "webfontloader": "^1.0.0"
   },
   "devDependencies": {
+    "@types/webfontloader": "^1.0.0",
     "@typescript-eslint/eslint-plugin": "^5.27.0",
     "@typescript-eslint/parser": "^5.27.0",
     "@vitejs/plugin-vue": "^2.3.3",
@@ -34,6 +36,12 @@
     "prettier": "^2.6.2",
     "typescript": "^4.5.4",
     "vite": "^2.9.9",
+    "vite-plugin-vuetify": "^1.0.0-alpha.0",
+    "vue-cli-plugin-vuetify": "~2.5.1",
     "vue-tsc": "^0.34.7"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,vue}": "eslint --fix",
+    "*.{ts,vue,scss,json,md}": "prettier --write"
   }
 }
