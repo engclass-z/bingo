@@ -1,0 +1,112 @@
+.home-container {
+  background-color: #f1e5b2;
+  height: 100%;
+
+  .bingo-num-wrap {
+    width: 100%;
+    height: 48vh;
+    background-image: url(./../assets/background.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    .bingo-num {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      padding-bottom: 15px;
+      h1 {
+        font-size: 300px;
+        text-align: center;
+        line-height: 1;
+        color: #e00f0b;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      height: 30vh;
+      width: 100%;
+      background-image: none;
+      .bingo-num {
+        align-items: center;
+        padding-bottom: 0;
+        h1 {
+          font-size: 100px;
+        }
+      }
+    }
+  }
+
+  .bingo-btn-wrap {
+    width: 100%;
+    padding: 30px 0 10px 0;
+    .bingo-btn {
+      color: #fff;
+      padding: 25px 0;
+      display: flex;
+      margin: 0 auto;
+      width: 30%;
+      font-size: 20px;
+      margin-bottom: 25px;
+      &.start-btn {
+        background-color: #df5656;
+      }
+      &.stop-btn {
+        background-color: #28a1d0;
+      }
+      &.reset-btn {
+        background-color: #8e5ba2;
+      }
+      .v-btn__content {
+        position: absolute;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      padding-top: 0;
+    }
+  }
+
+  .num-list-wrap {
+    margin: 10px;
+    .v-col {
+      padding: 12px 0;
+      .v-chip {
+        background: #fff;
+        font-size: 25px;
+        font-weight: bold;
+        color: #999;
+        padding: 20px;
+        &.active {
+          color: #e00f0b;
+          background: #fff;
+        }
+        .v-chip__underlay {
+          background: #fff;
+        }
+      }
+    }
+    @media screen and (max-width: 1100px) {
+      .v-col {
+        .v-chip {
+          font-size: 2vw;
+          padding: 1vw;
+        }
+      }
+    }
+  }
+
+  .outputted-num-list-wrap {
+    display: flex;
+    font-size: 25px;
+    color: #e00f0b;
+    font-weight: bold;
+    margin: 30px 20px 10px 30px;
+    span {
+      margin-right: 10px;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 15px;
+      margin: 10px 0 5px 10px;
+    }
+  }
+}

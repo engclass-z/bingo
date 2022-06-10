@@ -71,6 +71,9 @@ export const store = createStore({
       )
     },
     reset(state) {
+      if (!window.confirm('リセットを実行しますか？')) {
+        return
+      }
       localStorage.removeItem('outputtedNumList')
       state.outputtedNumList = []
     },

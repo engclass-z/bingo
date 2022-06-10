@@ -1,55 +1,66 @@
 <template>
-  <p v-text="bingoNum" />
-  <v-btn
-    v-if="isStart"
-    color="primary"
-    @click="start"
-  >
-    START
-  </v-btn>
-  <v-btn
-    v-else
-    color="primary"
-    @click="stop"
-  >
-    STOP
-  </v-btn>
-  <v-btn
-    color="error"
-    @click="reset"
-  >
-    RESET
-  </v-btn>
-  <div style="display: flex">
-    <div
-      v-for="outputtedNum in outputtedNumList"
-      :key="outputtedNum"
-      style="margin-right: 10px"
-    >
-      {{ outputtedNum }}
+  <div class="home-container">
+    <div class="bingo-num-wrap">
+      <div class="bingo-num">
+        <h1 v-text="bingoNum" />
+      </div>
+    </div>
+    <div class="bingo-btn-wrap">
+      <v-btn
+        v-if="isStart"
+        class="bingo-btn start-btn"
+        x-large
+        @click="start"
+      >
+        START
+      </v-btn>
+      <v-btn
+        v-else
+        class="bingo-btn stop-btn"
+        x-large
+        @click="stop"
+      >
+        STOP
+      </v-btn>
+      <v-btn
+        class="bingo-btn reset-btn"
+        @click="reset"
+      >
+        RESET
+      </v-btn>
+    </div>
+    <div class="num-list-wrap">
+      <v-row
+        v-for="numList in splitNumList"
+        :key="numList"
+        class="text-center"
+      >
+        <v-col
+          v-for="num in numList"
+          :key="num"
+        >
+          <v-chip
+            v-if="outputtedNumList.includes(num)"
+            class="active"
+          >
+            {{ num }}
+          </v-chip>
+          <v-chip v-else>
+            {{ num }}
+          </v-chip>
+        </v-col>
+      </v-row>
+    </div>
+    <div class="outputted-num-list-wrap">
+      <div class="outputted-num-list">
+        <span
+          v-for="outputtedNum in outputtedNumList"
+          :key="outputtedNum"
+        >{{ outputtedNum }},
+        </span>
+      </div>
     </div>
   </div>
-  <v-row
-    v-for="numList in splitNumList"
-    :key="numList"
-    class="text-center"
-    justify="center"
-  >
-    <v-col
-      v-for="num in numList"
-      :key="num"
-    >
-      <v-chip
-        v-if="outputtedNumList.includes(num)"
-        color="red"
-      >
-        {{ num }}
-      </v-chip>
-      <v-chip v-else>
-        {{ num }}
-      </v-chip>
-    </v-col>
-  </v-row>
 </template>
 
 <script lang="ts">
